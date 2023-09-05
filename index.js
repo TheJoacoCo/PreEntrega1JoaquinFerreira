@@ -1,17 +1,38 @@
+//arrays
+const profesionesMedicas = [
+    { nombre: "Médico General", horasSemanales: 40 },
+    { nombre: "Cirujano", horasSemanales: 50 },
+    { nombre: "Pediatra", horasSemanales: 35 }
+];
+
 function calcularSueldo() {
-    const nombre = document.getElementById("nombre").value;
-    const apellido = document.getElementById("apellido").value;
-    const dni = document.getElementById("dni").value;
-    const mail = document.getElementById("mail").value;
-    const fechaNacimiento = document.getElementById("fechaNacimiento").value;
-    const montoPorHora = parseFloat(document.getElementById("montoPorHora").value);
+    const nombre = prompt("Por favor, ingrese su nombre:");
+    const apellido = prompt("Por favor, ingrese su apellido:");
+    const dni = prompt("Por favor, ingrese su DNI:");
+    const mail = prompt("Por favor, ingrese su correo electrónico:");
+    const fechaNacimiento = prompt("Por favor, ingrese su fecha de nacimiento:");
+    const montoPorHora = parseFloat(prompt("Por favor, ingrese el monto por hora:"));
 
-    const horasPorSemana = 40; // Suponemos una jornada de 40 horas semanales
-    const semanasPorMes = 4;   // Suponemos un promedio de 4 semanas por mes
+    const opcionProfesion = parseInt(prompt("Por favor, elija una profesión médica:\n1. Médico General\n2. Cirujano\n3. Pediatra"));
+    
+    // Validar la elección del usuario
+    if (opcionProfesion >= 1 && opcionProfesion <= profesionesMedicas.length) {
+        const profesionElegida = profesionesMedicas[opcionProfesion - 1]; 
+        const sueldoMensual = montoPorHora * profesionElegida.horasSemanales * 4;
+        const sueldoAnual = sueldoMensual * 12;
 
-    const sueldoMensual = montoPorHora * horasPorSemana * semanasPorMes;
-    const sueldoAnual = sueldoMensual * 12;
+        // Sueldo anual con aumentos de 2%, 3% y 5%
+        const sueldoAnualConAumento2 = sueldoAnual * 1.02;
+        const sueldoAnualConAumento3 = sueldoAnual * 1.03;
+        const sueldoAnualConAumento5 = sueldoAnual * 1.05;
 
-    document.getElementById("sueldoMensual").textContent = `Sueldo Mensual de ${nombre} ${apellido}: $${sueldoMensual.toFixed(2)}`;
-    document.getElementById("sueldoAnual").textContent = `Sueldo Anual de ${nombre} ${apellido}: $${sueldoAnual.toFixed(2)}`;
+        const resultado = `Sueldo Mensual de ${nombre} ${apellido} como ${profesionElegida.nombre}:\n$${sueldoMensual.toFixed(2)}\nSueldo Anual sin ajustes: $${sueldoAnual.toFixed(2)}\nSueldo Anual con 2% de aumento: $${sueldoAnualConAumento2.toFixed(2)}\nSueldo Anual con 3% de aumento: $${sueldoAnualConAumento3.toFixed(2)}\nSueldo Anual con 5% de aumento: $${sueldoAnualConAumento5.toFixed(2)}`;
+        
+        alert(resultado); 
+        console.log(resultado); 
+    } else {
+        alert("Opción no válida. Por favor, elija una opción válida.");
+    }
 }
+
+

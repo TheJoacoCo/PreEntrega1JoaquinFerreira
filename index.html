@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Sueldo Médico</title>
-    <script src="./index.js"></script>
+    <script src="/index.js"></script>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <h1>Simulador de Sueldo Médico</h1>
@@ -23,6 +24,13 @@
         
         <label for="fechaNacimiento">Fecha de Nacimiento:</label>
         <input type="date" id="fechaNacimiento" required><br>
+        
+        <label for="profesion">Profesión Médica:</label>
+        <select id="profesion">
+            <option value="medico_general">Médico General</option>
+            <option value="cirujano">Cirujano</option>
+            <option value="pediatra">Pediatra</option>
+        </select><br>
         
         <label for="montoPorHora">Monto por Hora ($):</label>
         <input type="number" id="montoPorHora" required><br>
