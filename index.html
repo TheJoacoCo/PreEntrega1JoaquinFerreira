@@ -1,47 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador de Sueldo Médico</title>
-    <script src="/index.js"></script>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    <h1>Simulador de Sueldo Médico</h1>
-    <form id="simuladorForm">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" required><br>
-        
-        <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" required><br>
-        
-        <label for="dni">DNI:</label>
-        <input type="text" id="dni" required><br>
-        
-        <label for="mail">Correo Electrónico:</label>
-        <input type="email" id="mail" required><br>
-        
-        <label for="fechaNacimiento">Fecha de Nacimiento:</label>
-        <input type="date" id="fechaNacimiento" required><br>
-        
-        <label for="profesion">Profesión Médica:</label>
-        <select id="profesion">
-            <option value="medico_general">Médico General</option>
-            <option value="cirujano">Cirujano</option>
-            <option value="pediatra">Pediatra</option>
-        </select><br>
-        
-        <label for="montoPorHora">Monto por Hora ($):</label>
-        <input type="number" id="montoPorHora" required><br>
-        
-        <button type="button" onclick="calcularSueldo()">Calcular Sueldo</button>
-    </form>
-    
-    <div id="resultado">
-        <h2>Resultado:</h2>
-        <p id="sueldoMensual"></p>
-        <p id="sueldoAnual"></p>
+    <header class="header">
+        <h1 class="header-title">Simulador de Sueldo Médico</h1>
+    </header>
+
+    <div class="container">
+        <form id="simuladorForm">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" required><br>
+
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" required><br>
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" required><br>
+
+            <label for="mail">Correo Electrónico:</label>
+            <input type="email" id="mail" required><br>
+
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" required><br>
+
+            <label for="profesion">Profesión Médica:</label>
+            <select id="profesion">
+                <option value="Médico General">Médico General</option>
+                <option value="Cirujano">Cirujano</option>
+                <option value="Pediatra">Pediatra</option>
+                <option value="Dermatólogo">Dermatólogo</option>
+                <option value="Ginecólogo">Ginecólogo</option>
+                <option value="Oftalmólogo">Oftalmólogo</option>
+            </select>
+
+            <button type="button" id="guardarProfesion">Guardar Profesión Favorita</button><br>
+
+            <label for="montoPorHora">Monto por Hora ($):</label>
+            <input type="number" id="montoPorHora" required><br>
+
+            <label for="inflacion">Inflación Anual (%):</label>
+            <input type="number" id="inflacion" min="1" max="10" required><br>
+
+            <button type="button" id="calcularButton">Calcular Sueldo</button>
+        </form>
+
+        <div id="resultado" class="resultado">
+            <h2>Resultado:</h2>
+            <p id="sueldoMensual"></p>
+            <p id="sueldoAnual"></p>
+        </div>
     </div>
+
+    <footer class="footer">
+        <p class="footer-text">Gracias por utilizar esta página</p>
+    </footer>
+
+    <script src="index.js"></script>
 </body>
+
 </html>
