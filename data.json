@@ -1,0 +1,29 @@
+{
+    "profesiones": [
+        {
+            "nombre": "Médico General",
+            "horasSemanales": 40
+        },
+        {
+            "nombre": "Cirujano",
+            "horasSemanales": 50
+        },
+        {
+            "nombre": "Pediatra",
+            "horasSemanales": 35
+        },
+        {
+            "nombre": "Dermatólogo",
+            "horasSemanales": 38
+        },
+        {
+            "nombre": "Ginecólogo",
+            "horasSemanales": 42
+        },
+        {
+            "nombre": "Oftalmólogo",
+            "horasSemanales": 37
+        }
+    ]
+}
+

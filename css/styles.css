@@ -24,6 +24,8 @@ body {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    position: relative; /* Agregar esta línea */
+    z-index: 1; /* Agregar esta línea */
 }
 
 form label {
@@ -63,5 +65,15 @@ form button {
 
 .footer-text {
     font-weight: bold;
+}
+
+/* Estilos para el gráfico */
+#graficoSueldo {
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    display: block;
+    position: relative;
+    z-index: 1;
 }
 
